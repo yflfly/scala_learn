@@ -17,6 +17,13 @@ object ScalaLearnv1 {
     val distData = sc.parallelize(data)
     println(distData) // 打印结果 ParallelCollectionRDD[0] at main at <unknown>:0
 
+    // 4. external datasets
+    val filepath = "/Users/a58/companyproject/scala_learn/src/main/resources/delivery/0517_delivery.txt"
+    val distFile = sc.textFile(filepath)
+    // distFile.collect().foreach(println) 本地文件的打印
+
+
   }
+
 
 }
