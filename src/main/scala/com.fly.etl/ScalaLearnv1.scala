@@ -1,6 +1,7 @@
 package scala.com.fly.etl
 
 import org.apache.spark.{SparkConf, SparkContext}
+import org.mortbay.util.ajax.JSON
 
 object ScalaLearnv1 {
   def main(args: Array[String]): Unit = {
@@ -19,9 +20,27 @@ object ScalaLearnv1 {
 
     // 4. external datasets
     val filepath = "/Users/a58/companyproject/scala_learn/src/main/resources/delivery/0517_delivery.txt"
-    val distFile = sc.textFile(filepath)
+    val distFile = sc.textFile(filepath) // defines a baseRDD from an external file
     // distFile.collect().foreach(println) 本地文件的打印
+    val linelength = distFile.map(s => s.length)
+    val totallength = linelength.reduce((a, b) => a + b) // reduce() is an action
+    println(linelength) //MapPartitionsRDD[3] at main at <unknown>:0
+    println(totallength) // 64503
+    linelength.persist() // if we also wanted to use linelength again later,we could add persist()
 
+    // json文件的解析  需要进行讲解
+    val jsonpath = "/Users/a58/companyproject/scala_learn/src/main/resources/people.json"
+
+//    val jsonStr = sc.textFile(jsonpath)
+//    val result = jsonStr.map(s =>JSON.parse(s))
+//    println("---------------------")
+//    println(result)
+
+//    result.foreach({r => r match {
+//      case Some(map:Map[String,Any])=>println(map)
+//      case None =>println("Parsing failed")
+//      case other => println("Unknown data structure:"+other)
+//    }})
 
   }
 
