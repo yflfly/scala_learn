@@ -10,7 +10,7 @@ object WordCount {
     val sc =new SparkContext(conf)
     val filepath = "/Users/a58/companyproject/scala_learn/src/main/resources/mllibdata/wc.txt"
     // 创建环境变量实例
-    val data = sc.textFile(filepath)
+    val data = sc.textFile(filepath) //文件的读取
     // 读取文件 word 计数
     data.flatMap(_.split(" ")).map((_,1)).reduceByKey(_+_).collect().foreach(println)
     /*
