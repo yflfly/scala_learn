@@ -24,7 +24,7 @@ object DT {
     val model = DecisionTree.trainClassifier(data,numericClasses,
       categoricalFeaturesInfo,impurity,maxDepth,maxBins
     )
-    // 打印决策树信息
+    // 打印决策树信息 可以打印出决策树的一些基本统计信息
     println(model.topNode)
   }
 
