@@ -23,6 +23,9 @@ object LinearRegression {
     println(model.predict(Vectors.dense(0,1))) //提供新的待测数据  输出结果 1.0042991995986885
   }
 
+  /**
+   * mllib中的线性回归比较适合做一元线性回归而非多元线性回归，当回归系数较多时，算法产生过拟合的现象较为严重
+   */
 }
 
 
