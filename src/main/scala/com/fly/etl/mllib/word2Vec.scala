@@ -21,7 +21,6 @@ object word2Vec {
     for(synonym<-synonyms){
       println(synonym)
     }
-
   }
 
 }
