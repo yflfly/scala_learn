@@ -16,7 +16,7 @@ object word2Vec {
     // 打印向量模型
     println(model.getVectors)
     //寻找spark的相似词
-    val synonyms = model.findSynonyms("spark", 2) //spark查找目标 2为查找数量
+    val synonyms = model.findSynonyms("spark", 2)  //spark查找目标 2为查找数量
     //打印找到的内容
     for (synonym <- synonyms) {
       println(synonym)
