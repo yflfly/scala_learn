@@ -4,6 +4,7 @@ import org.apache.spark.mllib.feature.Word2Vec
 import org.apache.spark.{SparkConf, SparkContext}
 
 object word2Vec {
+
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("fly").setMaster("local")
     val sc = new SparkContext(conf)
