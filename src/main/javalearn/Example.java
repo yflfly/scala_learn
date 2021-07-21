@@ -23,5 +23,11 @@ class Example {
             System.out.print(key + ", ");
         }
 
+        System.out.println(sites.size());//
+
+        sites.clear(); //删除所有键值对
+        System.out.println(); // 可以实现换行符的功能
+        System.out.println(sites);
+
     }
 }
