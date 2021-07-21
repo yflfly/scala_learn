@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class TestIterator   {
-    public static void main(String[] args){
+public class TestIterator {
+    public static void main(String[] args) {
         // 创建集合
         ArrayList<String> sites = new ArrayList<String>();
         sites.add("Google");
@@ -17,7 +17,7 @@ public class TestIterator   {
         System.out.println();
         // 输出集合中的所有元素
         Iterator<String> it1 = sites.iterator();
-        while(it1.hasNext()) {
+        while (it1.hasNext()) {
             System.out.println(it1.next());
         }
 
@@ -28,9 +28,9 @@ public class TestIterator   {
         numbers.add(2);
         numbers.add(23);
         Iterator<Integer> it2 = numbers.iterator();
-        while(it2.hasNext()) {
+        while (it2.hasNext()) {
             Integer i = it2.next();
-            if(i < 10) {
+            if (i < 10) {
                 it2.remove();  // 删除小于 10 的元素
             }
         }
